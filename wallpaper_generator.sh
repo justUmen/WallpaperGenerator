@@ -3,15 +3,16 @@
 BG_COLOR="black"
 FG_COLOR="white"
 
-LANGUAGE="en"
 
-FILES="DB/$LANGUAGE/i3wm_configuration.txt XxX DB/$LANGUAGE/i3wm_default_shortcuts.txt"
-IMAGE="DB/image/i3wm.png"
-NAME="i3wm"
+#~ LANGUAGE="en"
+#~ FILES="DB/$LANGUAGE/i3wm_configuration.txt XxX DB/$LANGUAGE/i3wm_default_shortcuts.txt"
+#~ IMAGE="DB/image/i3wm.png"
+#~ NAME="i3wm"
 
-# FILES="DB/$LANGUAGE/bash_1.txt"
-# IMAGE="DB/image/bash.png"
-# NAME="bash_1"
+LANGUAGE="fr"
+FILES="DB/$LANGUAGE/bash_1.txt"
+IMAGE="DB/image/bash.png"
+NAME="bash_1"
 
 mkdir Wallpaper/$LANGUAGE/$NAME 2> /dev/null
 
