@@ -26,7 +26,7 @@ SCREEN_W=$1; SCREEN_H=$2
 
 #BASE 10,10 for 800x600
 margin_top=`expr $SCREEN_H / 60`
-margin_left=`expr $SCREEN_W / 80`
+margin_left=`expr \( $SCREEN_W / 80 \) / 2`
 
 #ONE LINE IS 25px + margin ?
 #MAX_LINES=
@@ -45,7 +45,7 @@ if [ ! "$IMAGE" == "" ]; then
 fi
 
 if [ $NB_LINES -gt 30 ];  then #TWO COLUMNS
-  line_width=`expr $SCREEN_W / 2`
+  line_width=`expr \( $SCREEN_W / 2 \) - $margin_left - $margin_left` #MArgin left / right
   line_height=`expr $SCREEN_H / 30`
 else
   line_width=$SCREEN_W
@@ -70,16 +70,18 @@ cat $FILES | while read line; do
   y=`expr $y + ${line_height}`
   i_line=`expr $i_line + 1`
   if [ "$i_line" == "30" ] || [ "$line" == "XxX" ]; then
-    x=`expr $line_width + $margin_left + $margin_left + $margin_left` #TRIPLE MARGIN LEFT
+    x=`expr $line_width + $margin_left + $margin_left` #MARGIN LEFT
     y=$margin_top
     i_line=0
     #change line width with more margin-right
-    line_width=`expr $line_width - $margin_left`
+    line_width=`expr $line_width - $margin_left - $margin_left`
   fi
+  x_margin=`expr $x + $margin_left`
   if [ ! "$line" == "XxX" ]; then
-    convert -fill $FG_COLOR -background $BG_COLOR -transparent $BG_COLOR -size ${line_width}x${line_height} -page +${x}+${y} label:"${varL} = ${varR}"  miff:-
+    convert -fill $FG_COLOR -background $BG_COLOR -size ${line_width}x${line_height} -page +${x_margin}+${y} label:"${varL} = ${varR}"  miff:-
   fi
-done | convert -background white -size ${SCREEN_W}x${SCREEN_H} xc: - -flatten wallpaper.jpg
+done | convert -background $BG_COLOR -size ${SCREEN_W}x${SCREEN_H} xc: - -flatten wallpaper.jpg
+#CAN TEST WITH white background
 
 convert wallpaper.jpg tmpIM -geometry +${im_X}+${margin_top} -composite Wallpaper/$LANGUAGE/$NAME/${SCREEN_W}x${SCREEN_H}.jpg
 rm wallpaper.jpg
