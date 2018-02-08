@@ -1,0 +1,9 @@
+configuration file:~/.config/i3/config
+Display details of a window:xprop
+Autostart thunar:exec thunar
+Always launch "Thunar" on desktop "Test":assign [class="Thunar"] workspace "Test"
+Set all mpv to floating and sticky:for_window [class="mpv"] floating enable, sticky enable
+Set "tabbed" as default layout:workspace_layout tabbed
+Launch "thunar" with alt + f:bindsym mod1+f exec thunar
+With alt + g, focus window "title" or launch "thunar":bindsym mod1+g exec wmctrl -a "title" || thunar
+Switch to workspace "Test" and launch "thunar" with alt + f:bindsym mod1+f exec i3-msg workspace && thunar

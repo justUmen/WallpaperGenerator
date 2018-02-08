@@ -1,0 +1,10 @@
+Root directory:/
+Print working directory:pwd
+Print the content of the root directory:ls /
+Create the folder test:mkdir test
+Move the terminal in /var:cd /var
+Print the content of the working directory:ls
+Delete the file test in the folder /home:rm /home/test
+Remove the empty directory ExE:rmdir ExE
+Move the terminal up one directory:cd ..
+The parent of /var/lib/file is:/var/file

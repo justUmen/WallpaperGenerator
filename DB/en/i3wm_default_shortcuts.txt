@@ -1,0 +1,24 @@
+super key:win key
+open terminal:super + shift + e
+close i3:super + Return
+Reload configuration:super + shift + c
+Reload i3:super + shift + r
+Switch to workspace 1:super + 1
+Switch to workspace 2:super + 2
+Close focus:super + shift + q
+Focus left window:super + left
+Focus right window:super + right
+Focus bottom window:super + down
+Focus top window:super + up
+Toggle fullscreen for focus:super + f
+Layout stacked for current workspace:super + s
+Layout split for current workspace:super + e
+Layout tabbed for current workspace:super + w
+New windows split vertical:super + v
+New windows split horizontal:super + h
+Send focus to workspace 1:super + shift + 1
+Send focus to workspace 2:super + shift + 2
+Switch between floating and tiling for focus:super + shift + Space
+Enter resize mode:super + r
+Resize with:up, down, left or right
+Exit resize mode:Escape or Enter
