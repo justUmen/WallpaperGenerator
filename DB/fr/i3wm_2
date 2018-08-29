@@ -1,0 +1,16 @@
+Toggle fullscreen for focus:super + f
+Reload i3wm : :Super + Shift + r
+
+New windows split vertical:super + v
+New windows split horizontal:super + h
+Enter resize mode:super + r
+Resize with:up, down, left or right
+Exit resize mode:Escape or Enter
+
+
+Set "tabbed" as default layout:workspace_layout tabbed
+With alt + g, focus window "title" or launch "thunar":bindsym mod1+g exec wmctrl -a "title" || thunar
+Switch to workspace "Test" and launch "thunar" with alt + f:bindsym mod1+f exec i3-msg workspace && thunar
+
+
+xmodmap ?
