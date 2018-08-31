@@ -89,9 +89,10 @@ cat $FILES | while read line; do
   x_margin=`expr $x + $margin_left`
   if [ ! "$line" == "XxX" ]; then
 	if [ ! "$line" == "" ]; then
-		convert -fill $FG_COLOR -background $BG_COLOR -size ${line_width}x${line_height} -page +${x_margin}+${y} label:"${varL} = ${varR}"  miff:-
+		echo " --> ${line_width}x${line_height}   /   +${x_margin}+${y}" >&2
+		convert -fill "$FG_COLOR" -background "$BG_COLOR" pango:"<span foreground='white'>${varL}</span>     <span foreground='yellow'>${varR}</span>" -page +${x_margin}+${y} miff:-
 	else
-		convert -fill $FG_COLOR -background $BG_COLOR -size ${line_width}x${line_height} -page +${x_margin}+${y} label:"" miff:-
+		convert -fill "$FG_COLOR" -background "$BG_COLOR" -size "${line_width}x${line_height}" -page +${x_margin}+${y} label:"" miff:-
 	fi
   fi
 done | convert -size ${SCREEN_W}x${SCREEN_H} xc:$BG_COLOR - -flatten wallpaper.jpg

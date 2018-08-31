@@ -2,23 +2,24 @@ Super key:Window key
 Fermer i3:Super + Shift + e
 Ouvrir lxterminal:Super + entrée
 Se déplacer dans l'espace de travail 1:Super + 1
-Se déplacer dans l'espace de travail 2:Super + 2
+Se déplacer dans l'espace de travail 4:Super + 4
 Fermez la fenêtre:Super + Shift + q
 Disposition des fenêtres en onglet:Super + w
 Disposition des fenêtres en liste:Super + s
-Disposition des fenêtres en mosaique:Super + e
+Disposition des fenêtres en damier:Super + e
 Cibler la fenêtre de gauche:Super + gauche
 Cibler la fenêtre de droite:Super + droite
 Cibler la fenêtre du bas:Super + bas
 Cibler la fenêtre du haut:Super + haut
 Envoyer la fenêtre dans l'espace de travail 1:Super + Shift + 1
-Envoyer la fenêtre dans l'espace de travail 2:Super + Shift + 2
-Alterner entre mode fixe et flottant:Super + Shift + espace
+Envoyer la fenêtre dans l'espace de travail 4:Super + Shift + 4
+Activer / Désactiver le mode flottant:Super + Shift + espace
 Affichez les détails d'une fenêtre:xprop
-Chemin du fichier de configuration de i3:~/.config/i3/config
+Chemin du fichier de configuration d'i3:~/.config/i3/config
 Recharger la configuration d'i3:Super + Shift + c
 Code de configuration pour toujours lancer la classe "Thunar" sur l'espace de travail "Test":assign [class="Thunar"] workspace "Test"
 Code de configuration pour donner à la classe "mpv" le mode flottant:for_window [class="mpv"] floating enable
 Code de configuration pour affichez la classe "mpv" sur tous les espaces de travail:for_window [class="mpv"] sticky enable
 Code de configuration pour pouvoir lancer "thunar" avec Alt + f:bindsym mod1+f exec thunar
-Code de configuration pour lancer "thunar" au démarrage d'i3:exec thunar
+Code de configuration pour pouvoir lancer "thunar" avec Super + f:bindsym mod4+f exec thunar
+Code de configuration pour lancer "nm-applet" au démarrage d'i3:exec nm-applet
