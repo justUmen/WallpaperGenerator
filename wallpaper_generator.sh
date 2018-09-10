@@ -11,16 +11,16 @@ FG_COLOR="white"
 #~ IMAGE="DB/image/i3wm.png"
 #~ NAME="i3wm"
 
-#~ LANGUAGE="fr"
-##~ FILES="DB/$LANGUAGE/bash_1.txt"
-#~ FILES="DB/$LANGUAGE/QUIZ_BASH_1_3"
-#~ IMAGE="DB/image/bash.png"
-#~ NAME="quiz_bash_1_3"
-
 LANGUAGE="fr"
-FILES="DB/$LANGUAGE/i3wm_1"
-IMAGE="DB/image/i3wm.png"
-NAME="i3wm_1"
+#~ ##~ FILES="DB/$LANGUAGE/bash_1.txt"
+FILES="DB/$LANGUAGE/QUIZ_BASH_1_3"
+IMAGE="DB/image/bash.png"
+NAME="quiz_bash_1_3"
+
+#~ LANGUAGE="fr"
+#~ FILES="DB/$LANGUAGE/i3wm_1"
+#~ IMAGE="DB/image/i3wm.png"
+#~ NAME="i3wm_1"
 
 mkdir Wallpaper/$LANGUAGE/$NAME 2> /dev/null
 
