@@ -1,11 +1,13 @@
 #!/bin/bash
-#MANUAL : Avoid long lines
+#MANUAL : Avoid long lines (set max at 100)
 #MANUAL : Prepare logo position top right
 #< 12 lines : bigger font, logo top middle and text will be lower
 #> 12 lines : logo top right
 
+#IDEA : Find longest line and based font size on that ???
+
 image_position="top_right"
-SUBJECT="i3wm"
+SUBJECT="bash"
 NUMBER="1"
 
 LANGUAGE="fr"
@@ -16,6 +18,10 @@ mkdir Wallpaper/$LANGUAGE/$NAME 2> /dev/null
 
 BG_COLOR="black"
 FG_COLOR="white"
+FG_COLOR_SECOND="yellow"
+#~ BG_COLOR="white"
+#~ FG_COLOR="black"
+#~ FG_COLOR_SECOND="yellow"
 
 NB_LINES=`cat $FILES | wc -l`
 
@@ -64,21 +70,24 @@ rm wallpaper.jpg 2> /dev/null
 
 
 FONT_SIZE=20000
-if [ $NB_LINES -lt 12 ]; then
-	case $2 in
-		1080) FONT_SIZE=30000 ;;
-		1024) FONT_SIZE=30000 ;;
-		900)  FONT_SIZE=25000 ;;
-		768)  FONT_SIZE=25000 ;;
-	esac
-else
-	case $2 in
-		1080) FONT_SIZE=25000 ;;
-		1024) FONT_SIZE=25000 ;;
-		900)  FONT_SIZE=20000 ;;
-		768)  FONT_SIZE=20000 ;;
-	esac
+if [ $1 -eq 1920 ] && [ $2 -eq 1080 ]; then FONT_SIZE=19000;
+elif [ $1 -eq 1366 ] && [ $2 -eq 768 ]; then FONT_SIZE=16000;
+elif [ $1 -eq 1360 ] && [ $2 -eq 768 ]; then FONT_SIZE=16000;
+
+elif [ $1 -eq 1900 ] && [ $2 -eq 900 ]; then FONT_SIZE=18000;
+
+elif [ $1 -eq 1024 ] && [ $2 -eq 768 ]; then FONT_SIZE=15000;
+elif [ $1 -eq 1280 ] && [ $2 -eq 1024 ]; then FONT_SIZE=20000;
 fi
+
+#~ if [ $NB_LINES -lt 12 ]; then
+	#~ case $2 in
+		#~ 1080) FONT_SIZE=30000 ;;
+		#~ 1024) FONT_SIZE=30000 ;;
+		#~ 900)  FONT_SIZE=25000 ;;
+		#~ 768)  FONT_SIZE=25000 ;;
+	#~ esac
+#~ fi
 
 i_line=0
 cat $FILES | while read line; do
@@ -106,9 +115,9 @@ cat $FILES | while read line; do
   if [ ! "$line" == "XxX" ]; then
 	if [ ! "$line" == "" ]; then
 		#~ echo " --> ${line_width}x${line_height}   /   +${x_margin}+${y}" >&2
-		convert -fill "$FG_COLOR" -background "$BG_COLOR" -size "${line_width}x${line_height}" pango:"<span size='$FONT_SIZE' foreground='white'>${varL}</span>     <span size='$FONT_SIZE' foreground='yellow'>${varR}</span>" -page +${x_margin}+${y} miff:-
+		convert -background "$BG_COLOR" -size "${line_width}x${line_height}" pango:"<span size='$FONT_SIZE' foreground='$FG_COLOR'>${varL}</span>     <span size='$FONT_SIZE' foreground='$FG_COLOR_SECOND'>${varR}</span>" -page +${x_margin}+${y} miff:-
 	else
-		convert -fill "$FG_COLOR" -background "$BG_COLOR" -size "${line_width}x${line_height}" -page +${x_margin}+${y} label:"" miff:-
+		convert -background "$BG_COLOR" -size "${line_width}x${line_height}" -page +${x_margin}+${y} label:"" miff:-
 	fi
   fi
 done | convert -size ${SCREEN_W}x${SCREEN_H} xc:$BG_COLOR - -flatten wallpaper.jpg
