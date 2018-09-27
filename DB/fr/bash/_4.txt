@@ -1,0 +1,4 @@
+ Bash 4 => Concepts : condition de succès , condition d'échec
+ Bash 4 => Code : mv , cp , ; , && , ||
+Commande pour déplacer le fichier 'bob' dans le dossier 'Personnes':mv bob Personnes
+Commande pour renommer le fichier 'bob' en un fichier 'bobby':mv bob bobby

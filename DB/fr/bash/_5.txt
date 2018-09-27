@@ -1,0 +1,2 @@
+ Bash 5 => Concepts : permissions et limitations
+ Bash 5 => Code : ls -l , chmod

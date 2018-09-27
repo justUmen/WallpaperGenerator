@@ -1,0 +1,2 @@
+ Bash 6 => Concepts : donnée , métadonnée
+ Bash 6 => Code : * , ? , touch , chown , chmod

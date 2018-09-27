@@ -1,0 +1,2 @@
+ Bash 9 => Concepts : variable , manipulation de variable , variable d'environnement
+ Bash 9 => Code : $ , $PATH , type , printenv

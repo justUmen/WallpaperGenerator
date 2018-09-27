@@ -1,0 +1,2 @@
+ Bash 8 => Concepts : entrée standard , pipe
+ Bash 8 => Code : | , wc , sort , grep , uniq , - , |& , <

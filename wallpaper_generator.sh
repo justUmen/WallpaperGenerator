@@ -1,16 +1,24 @@
 #!/bin/bash
+#USAGE : ./wallpaper_generator.sh 1920 1080 fr i3wm 1
+
 #MANUAL : Avoid long lines (set max at 100)
 #MANUAL : Prepare logo position top right
 #< 12 lines : bigger font, logo top middle and text will be lower
 #> 12 lines : logo top right
 
+#IDEA : Detect when line on 2 lines
 #IDEA : Find longest line and based font size on that ???
+#IDEA : If 2 columns, logo top left
 
 image_position="top_right"
-SUBJECT="bash"
-NUMBER="1"
 
-LANGUAGE="fr"
+#~ LANGUAGE="fr"
+#~ SUBJECT="i3wm"
+#~ NUMBER="1"
+LANGUAGE="$3"
+SUBJECT="$4"
+NUMBER="$5"
+
 FILES="DB/$LANGUAGE/$SUBJECT/_${NUMBER}.txt"
 IMAGE="DB/image/$SUBJECT.png"
 NAME="${SUBJECT}_${NUMBER}"
@@ -132,11 +140,14 @@ if [[ "$image_position" == "top_right" ]]; then
 	TMP_margin_top=$(expr $margin_top + $margin_top + $margin_top + $margin_top + $margin_top)
 	LEFT_IM=$(expr $SCREEN_W - $IMAGE_WIDTH - $margin_top - $margin_top - $margin_top - $margin_top - $margin_top )
 	echo "+ Position of image :  +${LEFT_IM}+${TMP_margin_top} (top_right)"
-	convert wallpaper.jpg tmpIM -geometry +${LEFT_IM}+${TMP_margin_top} -composite Wallpaper/$LANGUAGE/$NAME/${SCREEN_W}x${SCREEN_H}.jpg
+	convert wallpaper.jpg tmpIM -geometry +${LEFT_IM}+${TMP_margin_top} -composite tmpTOO.jpg
 elif [[ "$image_position" == "top_middle" ]]; then
 	echo "+ Position of image :  +${im_X}+${margin_top} (top_middle)"
-	convert wallpaper.jpg tmpIM -geometry +${im_X}+${margin_top} -composite Wallpaper/$LANGUAGE/$NAME/${SCREEN_W}x${SCREEN_H}.jpg
+	convert wallpaper.jpg tmpIM -geometry +${im_X}+${margin_top} -composite tmpTOO.jpg
 fi
+
+#Add chapter's name bottom right.
+convert tmpTOO.jpg -fill "$FG_COLOR" -gravity SouthEast -draw "text 20,15 '$NAME'" Wallpaper/$LANGUAGE/$NAME/${SCREEN_W}x${SCREEN_H}.jpg
 
 echo
 

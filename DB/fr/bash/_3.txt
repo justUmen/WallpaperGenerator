@@ -1,0 +1,10 @@
+Caractère d'échappement sur bash:\
+Afficher la version de votre bash:bash --version
+Code représentant une mise à la ligne:\n
+Code représentant une tabulation:\t
+Mettre le mot 'Albert' dans le fichier 'nom':echo Albert>nom
+Ajouter le mot 'Einstein' dans le fichier 'nom':echo Einstein>>nom
+Afficher le contenu du fichier 'nom':cat nom
+Commande pour afficher trois guillemets:echo '"""'
+Commande pour afficher trois apostrophes:echo "'''"
+Afficher le contenu du fichier 'nom' deux fois:cat nom nom

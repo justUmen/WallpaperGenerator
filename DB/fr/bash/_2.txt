@@ -1,0 +1,10 @@
+Afficher le manuel de la commande man:man man
+Symbole représentant votre répertoire d'utilisateur:~
+Le nom d'un fichier caché commence par un:.
+Les options courtes d'une commande commencent par:-
+Afficher les fichiers cachés du répertoire courant:ls -a
+Les options longues d'une commande commencent par:--
+Afficher les fichiers cachés du répertoire courant:ls --all
+Chemin relatif de votre répertoire parent:../
+Chemin relatif de votre répertoire grand parent:../../
+Afficher l'aide de de la commande rmdir:rmdir --help

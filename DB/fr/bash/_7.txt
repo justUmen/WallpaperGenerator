@@ -1,0 +1,2 @@
+ Bash 7 => Concepts : sortie standard , erreur standard , regroupement de flux
+ Bash 7 => Code : 1> , 2> , &> , 1>> , 2>> , &>> , /dev/null , 2>&1 , 1>&2 , ()
