@@ -7,4 +7,4 @@ Afficher le contenu du répertoire courant£ls
 Supprimer le fichier test dans le dossier /home£rm /home/test
 Supprimer le dossier vide ExE£rmdir ExE
 Remonter d'un cran dans l'arborescence linux£cd ..
-Le répertoire parent de /var/lib£/var
+Le répertoire parent du répertoire /var/lib/test£/var/lib
