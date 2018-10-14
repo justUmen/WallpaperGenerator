@@ -108,8 +108,8 @@ cat $FILES | while read line; do
     fi
     IMAGE=""
   fi
-  varL=$(echo $line | cut -f1 -d:)
-  varR=$(echo $line | cut -f2 -d:)
+  varL=$(echo $line | sed 's/£.*//')
+  varR=$(echo $line | sed 's/.*£//')
   y=`expr $y + ${line_height}`
   i_line=`expr $i_line + 1`
   if [ "$i_line" == "$MAX_LINES" ] || [ "$line" == "XxX" ]; then
@@ -123,7 +123,7 @@ cat $FILES | while read line; do
   if [ ! "$line" == "XxX" ]; then
 	if [ ! "$line" == "" ]; then
 		#~ echo " --> ${line_width}x${line_height}   /   +${x_margin}+${y}" >&2
-		convert -background "$BG_COLOR" -size "${line_width}x${line_height}" pango:"<span size='$FONT_SIZE' foreground='$FG_COLOR'>${varL}</span>     <span size='$FONT_SIZE' foreground='$FG_COLOR_SECOND'>${varR}</span>" -page +${x_margin}+${y} miff:-
+		convert -font Free -background "$BG_COLOR" -size "${line_width}x${line_height}" pango:"<span size='$FONT_SIZE' foreground='$FG_COLOR'>${varL}</span>     <span size='$FONT_SIZE' foreground='$FG_COLOR_SECOND'>${varR}</span>" -page +${x_margin}+${y} miff:-
 	else
 		convert -background "$BG_COLOR" -size "${line_width}x${line_height}" -page +${x_margin}+${y} label:"" miff:-
 	fi
